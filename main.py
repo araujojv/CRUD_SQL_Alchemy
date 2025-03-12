@@ -24,3 +24,4 @@ class Usuario(Base):
     
     
 engine = create_engine(f"sqlite:///{PATH_TO_BD}")
+Base.metadata.create_all(bind=engine)
