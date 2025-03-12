@@ -1,6 +1,6 @@
 from pathlib import Path
 from sqlalchemy import create_engine, String, Boolean
-from sqlalchemy.orm import DeclarativeBase, Mapped,mapped_column
+from sqlalchemy.orm import DeclarativeBase, Mapped,mapped_column,Session
 
 
 
@@ -25,3 +25,7 @@ class Usuario(Base):
     
 engine = create_engine(f"sqlite:///{PATH_TO_BD}")
 Base.metadata.create_all(bind=engine)
+
+
+
+##Criando o CRUD
