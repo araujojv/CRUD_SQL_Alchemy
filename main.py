@@ -11,5 +11,6 @@ class Usuario(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     nome: Mapped[str] = mapped_column(String(30))
     senha: Mapped[str] = mapped_column(String(30))
+    email: Mapped[str] = mapped_column(String(30))
     
     
