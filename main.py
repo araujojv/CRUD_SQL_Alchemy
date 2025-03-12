@@ -61,6 +61,18 @@ def le_usuario_por_id(id):
         usuarios = session.execute(select_sql).fetchall()
         return usuarios
         
+def modifica_usuario(
+    id,
+    nome=None,
+    senha=None,
+    email=None,
+    acesso_gestor=None      
+    ):
+  with Session(bind=engine) as session:
+      Select_sql=select(Usuario).filter_by(id=id)
+      Usuario=session.execute(Select_sql).fetchall      
+      
+        
         
 if __name__ =='__main__':
     cria_usuarios(
