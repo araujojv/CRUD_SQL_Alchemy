@@ -12,5 +12,5 @@ class Usuario(Base):
     nome: Mapped[str] = mapped_column(String(30))
     senha: Mapped[str] = mapped_column(String(30))
     email: Mapped[str] = mapped_column(String(30))
-    
+    acesso_gestor: Mapped[bool] = mapped_column(Boolean(),default=False)
     
