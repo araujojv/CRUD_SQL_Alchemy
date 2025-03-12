@@ -48,3 +48,11 @@ def cria_usuarios(
         session.add(usuario)
         session.commit()
         
+
+if __name__ =='__main__':
+    cria_usuarios(
+        "João Araujo",
+        senha="minha_senha",
+        email="joaoaraujo.com",
+        acesso_gestor=True
+    )
