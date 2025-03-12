@@ -68,7 +68,7 @@ A aplicação exemplifica como interagir com um banco de dados relacional por me
 2. **Execute a aplicação**:
 
    ```bash
-   python app.py
+   python main.py
    ```
 
 3. **Interaja com a aplicação**:
@@ -78,7 +78,6 @@ A aplicação exemplifica como interagir com um banco de dados relacional por me
 ## Estrutura do Projeto
 
 - `app.py`: Arquivo principal contendo a lógica da aplicação e as operações CRUD.
-- `models.py`: Define as classes e tabelas do banco de dados utilizando SQLAlchemy.
 - `requirements.txt`: Lista de dependências necessárias para executar a aplicação.
 
 ## Contribuições
