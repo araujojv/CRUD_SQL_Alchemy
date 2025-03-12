@@ -82,6 +82,15 @@ def modifica_usuario(
                 usuario[0].acesso_gestor = acesso_gestor     
         session.commit()
         
+def deleta_usuario(id):
+    with Session(bind=engine) as session: 
+        comando_sql=select(Usuario).filter_by(id=id)
+        usuarios= session.execute(comando_sql).fetchall()
+        for usuario in usuarios:
+            session.delete(usuario[0])
+        session.commit()
+        
+        
 if __name__ =='__main__':
     cria_usuarios(
         "rafael araujo",
