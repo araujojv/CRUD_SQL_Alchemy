@@ -48,13 +48,20 @@ def cria_usuarios(
         session.add(usuario)
         session.commit()
         
+        
 def le_toods_usuarios():
     with Session(bind=engine) as session:
         select_sql= select(Usuario)
         usuarios = session.execute(select_sql).fetchall()
         return usuarios 
 
-
+def le_usuario_por_id(id):
+    with Session(bind=engine) as session:
+        select_sql =select(Usuario).filter_by(id=id)
+        usuarios = session.execute(select_sql).fetchall()
+        return usuarios
+        
+        
 if __name__ =='__main__':
     cria_usuarios(
         "rafael araujo",
