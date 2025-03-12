@@ -68,11 +68,19 @@ def modifica_usuario(
     email=None,
     acesso_gestor=None      
     ):
-  with Session(bind=engine) as session:
-      Select_sql=select(Usuario).filter_by(id=id)
-      Usuario=session.execute(Select_sql).fetchall      
-      
-        
+    with Session(bind=engine) as session:
+        Select_sql=select(Usuario).filter_by(id=id)
+        usuarios=session.execute(Select_sql).fetchall    
+        for usuario in usuarios:
+            if nome:
+                usuario[0].nome = nome 
+            if senha:
+                usuario[0].senha = senha 
+            if email:
+                usuario[0].email = email 
+            if acesso_gestor:
+                usuario[0].acesso_gestor = acesso_gestor     
+        session.commit()
         
 if __name__ =='__main__':
     cria_usuarios(
