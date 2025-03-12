@@ -1,5 +1,5 @@
 from pathlib import Path
-from sqlalchemy import create_engine, String, Boolean
+from sqlalchemy import create_engine, String, Boolean,select
 from sqlalchemy.orm import DeclarativeBase, Mapped,mapped_column,Session
 
 
@@ -48,11 +48,19 @@ def cria_usuarios(
         session.add(usuario)
         session.commit()
         
+def le_toods_usuarios():
+    with Session(bind=engine) as session:
+        select_sql= select(Usuario)
+        usuarios = session.execute(select_sql).fetchall()
+        return usuarios 
+
 
 if __name__ =='__main__':
     cria_usuarios(
-        "João Araujo",
+        "rafael araujo",
         senha="minha_senha",
-        email="joaoaraujo.com",
+        email="pedroaraujo.com",
         acesso_gestor=True
     )
+    
+print(le_toods_usuarios())
