@@ -78,7 +78,7 @@ def modifica_usuario(
                 usuario[0].senha = senha 
             if email:
                 usuario[0].email = email 
-            if acesso_gestor:
+            if not acesso_gestor is None:
                 usuario[0].acesso_gestor = acesso_gestor     
         session.commit()
         
