@@ -28,4 +28,20 @@ Base.metadata.create_all(bind=engine)
 
 
 
-##Criando o CRUD
+##CRUD
+
+
+def cria_usuarios(
+    nome,
+    senha,
+    email,
+    acesso_gestor=False
+        
+):
+    with Session(bind=engine) as session:
+        usuario = Usuario(
+            nome=nome,
+            senha=senha,
+            email=email,
+            acesso_gestor=acesso_gestor
+        )
