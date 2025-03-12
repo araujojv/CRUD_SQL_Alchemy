@@ -45,3 +45,6 @@ def cria_usuarios(
             email=email,
             acesso_gestor=acesso_gestor
         )
+        session.add(usuario)
+        session.commit()
+        
